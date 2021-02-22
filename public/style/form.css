@@ -1,0 +1,58 @@
+/* The submit form */
+.form-submit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-submit h1 {
+    text-align: center;
+    margin: 0 0 3% 0;
+    padding: 0;
+}
+.form-submit form {
+    width: 70%;
+    text-align: left;
+}
+input[type=text], input[type=number], input[type=email], textarea, input[type=password] {
+    width: 100%;
+    background-color: #c4cad0;
+    padding: 12px;
+    border: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/* The popup form */
+.form-popup {
+    text-align: center;
+    position: fixed;
+    width: 40%;
+    bottom: 50%;
+    right: 30%;
+    left: 30%;
+    border: 3px solid #979797;
+    background-color: white;
+}
+
+/* Overlay effect - hidden by default */
+#popup {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+} 
+
+/* Alert text */
+.alert {
+    color: red;
+}

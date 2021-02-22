@@ -1,0 +1,122 @@
+#content {
+    text-align: center;
+}
+#content-logo {
+    width: 10%;
+}
+
+/*== Content: index.html ==*/
+#content-img-h1 {
+  color: white;
+  background-image: url('/Assets/mr_coffee_salle.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 800px;
+}
+#content-img-h1 h1 {
+  color: white;
+  padding: 5%;
+}
+/*---- Content: 3 columns ----*/
+.content-three-columns {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.content-three-columns div {
+  background-color: #bbc2c9;
+  text-align: center;
+  margin:1%;
+  padding: 2%;
+  width: 30%;
+}
+.content-three-columns img {
+  width: 30%;
+}
+/*---- Button ----*/
+button {
+  margin-top: 5%;
+  background-color: #6a7b8b;
+  border: none;
+  color: white;
+  padding: 2% 5% 2% 5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px grey;
+}
+/*---- open ----*/
+#open {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin-left: 10%;
+}
+#open img {
+  width: 5%;
+}
+/*---- Content: 2 columns ----*/
+.content-two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+.content-two-columns div {
+    text-align: center;
+    flex: 40%;
+    margin: 5% 5% 0 5%;
+}
+.content-two-columns p {
+    padding-bottom: 10%;
+}
+
+/*== Content: about.html ==*/
+.content-two-columns-unequal {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+.column-large {
+    flex: 60%;
+    padding: 5%;
+    text-align: left;
+}
+.column-small {
+    flex: 40%;
+    padding: 5%;
+}
+.column-small img{
+    width: 90%;
+    height: 90%;
+}
+
+/*== Content: contact.html ==*/
+.content-one-column-left {
+    text-align: left;
+    margin-left: 10%;
+}
+.map {
+  margin: 5% 0 5% 0;
+  padding: 0;
+  width: 750px;
+  height: 500px;
+  align-self: flex-start;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #b2b2b2;
+}

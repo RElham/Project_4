@@ -1,0 +1,58 @@
+h1 {
+    margin: 0;
+}
+#content ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#content li {
+    padding: 0;
+}
+
+/* Schedule */
+p {
+    margin: 0 0 0 0;
+    padding: 0;
+}
+#content {
+    text-align: center;
+}
+#schedules {
+    margin: 0 40% 0 40%;
+    text-align: left;
+}
+
+/* Form */
+button {
+    margin-top: 2%;
+    padding: 1% 5% 1% 5%;
+}
+.form-submit form {
+    width: 25%;
+    text-align: left;
+}
+input[type=number].inputTime, .inputTime {
+    width: 47%;
+    background-color: #c4cad0;
+    padding: 12px;
+    border: none;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] {
+    margin-top: 2%;
+    padding: 1% 5% 1% 5%;
+    background-color: #6a7b8b;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px grey;
+}
