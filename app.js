@@ -30,3 +30,20 @@ app.get('/test', (req, res) => {
         username: ""
     })
 })
+
+//--Register
+app.get('/signup', (req, res) => {
+    res.render('pages/register');
+});
+app.post('/signup', (req, res) => {
+    const { furstname, lastname } = req.body;
+});
+
+//--Login
+app.get('/login', (req, res) => {
+    res.render('pages/login');
+});
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+});
+
