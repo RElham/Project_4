@@ -1,0 +1,22 @@
+<%- include('header') -%>
+
+<section id="content">
+    <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
+    <h1>Welcome to Mr.Coffee schedule management website</h1>
+    <section class="form-submit">
+        <form method="POST" action="/login">
+            <div>
+                <label for="email">Email address</label>
+                <input name="email" type="email" id="email" placeholder="Enter email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input name="password" type="password" id="password" placeholder="Enter Password">
+            </div>
+            <button name="loginBtn" type="submit">Login</button><br><br>
+            <a class="btn btn-primary btn-lg active" href="/signup">Sign Up</a>
+        </form>
+    </section>
+</section>
+
+<%- include('footer') -%>

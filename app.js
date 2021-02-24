@@ -2,7 +2,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
-//const pool = require('./database')
 
 const PORT = 3000
 const app = express()
@@ -22,11 +21,11 @@ app.listen(PORT, () => {
 })
 
 app.get('/test', (req, res) => {
-    res.render('pages/schedule', {
-        title: "Welcome to Mr.Coffee schedule management website",
-        subTitle: "Our schedules",
-        schedules: "",
-        ScheduleFormEnabled: false,
-        username: ""
-    })
+    res.send("It's work")
 })
+
+// Routes
+const loginRouter = require('./routes/login')
+const signupRouter = require('./routes/signup')
+app.use('/login', loginRouter)
+app.use('/signup', signupRouter)
