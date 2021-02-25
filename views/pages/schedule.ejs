@@ -2,12 +2,11 @@
 
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
-    <h1><%= title %></h1>
-    <h3 id="subTitle"><%= subTitle %></h3>
+    
     <div id="schedules">
         <% for(let i = 0; i < schedules.length; i++) { %>
           <p>
-            <strong><%= schedules[i].username %></strong>&nbsp;-&nbsp;<%= schedules[i].day %>&nbsp;<%= schedules[i].start_at %>-<%= schedules[i].end_at %>
+            <strong><a href="/user/<%= schedules[i].user_id %>"><%= schedules[i].firstname %></a></strong>&nbsp;-&nbsp;<%= schedules[i].day %>&nbsp;<%= schedules[i].start_at %>-<%= schedules[i].end_at %>
           </p>
         <% } %>
       </table>
