@@ -3,16 +3,19 @@
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
     <h1>Welcome to Mr.Coffee schedule management website</h1>
+    <div id="errorMessage">
+        <p id="message"><%= message %></p>
+    </div>
     <section class="form-submit">
-        <form method="POST" action="/register">
+        <form method="POST" action="/signup">
             <div>
                 <label for="firstname">First Name</label>
-                <input name="firstName" type="text" id="firstname" placeholder="Enter firstname">
+                <input name="firstname" type="text" id="firstname" placeholder="Enter firstname">
             </div>
 
             <div>
                 <label for="lastname">Last Name</label>
-                <input name="firstName" type="text" id="lastname" placeholder="Enter lastname">
+                <input name="lastname" type="text" id="lastname" placeholder="Enter lastname">
             </div>
 
             <div>

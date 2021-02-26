@@ -1,7 +1,7 @@
 {
   "name": "project_4",
   "version": "1.0.0",
-  "description": "",
+  "description": "A schedule management website for Mr. Coffee! This is project 4 Incode2 bootcamp Incode Academy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,14 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "pg": "^8.5.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siri-goog/Project_4.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/siri-goog/Project_4/issues"
+  },
+  "homepage": "https://github.com/siri-goog/Project_4#readme"
 }
