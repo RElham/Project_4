@@ -3,9 +3,9 @@
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
     <h1>Welcome to Mr.Coffee schedule management website</h1>
-    <div id="errorMessage">
-        <p id="message"><%= message %></p>
-    </div>
+    <%if(errMsg){%>
+        <p style="color: red;"><%= errMsg %></p><br>
+    <%}%>
     <section class="form-submit">
         <form method="POST" action="/signup">
             <div>
@@ -34,7 +34,7 @@
                     placeholder="Confirm your password here">
             </div>
 
-            <button type="submit">Create Your Account</button>
+            <button id="submitBtn" type="submit" onclick="submit()">Create Your Account</button>
         </form>
     </section>
 </section>

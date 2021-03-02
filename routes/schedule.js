@@ -1,11 +1,16 @@
 const express = require('express')
 const router = express.Router();
 const pool = require('../database')
+const validator = require('validator');
 
 // middleware function to check for logged-in users
 var sessionChecker = (req, res, next) => {
     if (!req.session.user_id) {
-        res.redirect('/login');
+        res.render('pages/login', {
+            NavEnabled: false,
+            ErrMsgEnabled: false,
+            errMsg: ""
+        });
     } else {
         next();
     }    
@@ -51,12 +56,18 @@ router.get('/', sessionChecker, (req, res) => {
                         NavEnabled: true,
                         schedules: results.rows,
                         ScheduleFormEnabled: false,
-                        username: username
+                        username: username,
+                        ErrMsgEnabled: false,
+                        message: ""
                     })
                 }
             })
         } else {
-            res.redirect('/login');
+            res.render('pages/login', {
+                NavEnabled: false,
+                ErrMsgEnabled: false,
+                errMsg: ""
+            });
         }
     } catch (error) {
         console.log(error.message)
@@ -71,7 +82,7 @@ router.post('/', sessionChecker, async(req, res) => {
         var day = req.body.schedule.day
         var startAt = req.body.schedule.startHr +":"+ req.body.schedule.startMin +":00"
         var endAt = req.body.schedule.endHr +":"+ req.body.schedule.endMin +":00"
-        
+
         pool.query('INSERT INTO schedules (user_id, day, start_at, end_at) VALUES ($1, $2, $3, $4)', [userId, day, startAt, endAt], (error, results) => {
             if (error) {
                 throw error

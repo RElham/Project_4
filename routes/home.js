@@ -4,7 +4,11 @@ const pool = require('../database')
 // middleware function to check for logged-in users
 var sessionChecker = (req, res, next) => {
     if (!req.session.user_id) {
-        res.redirect('/login');
+        res.render('pages/login', {
+            NavEnabled: false,
+            ErrMsgEnabled: false,
+            errMsg: ""
+        });
     } else {
         next();
     }    

@@ -3,6 +3,11 @@
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
     <h1>Welcome to Mr.Coffee schedule management website</h1>
+    
+    <%if(ErrMsgEnabled){%>
+        <p style="color: red;"><%= errMsg %></p><br>
+    <%}%>
+
     <section class="form-submit">
         <form method="POST" action="/login">
             <div>

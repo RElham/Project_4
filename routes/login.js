@@ -1,16 +1,40 @@
 const express = require('express')
 const router = express.Router();
 const pool = require('../database')
+const validator = require('validator');
 
 //--Login
 router.get('/', (req, res) => {
     res.render('pages/login', {
-        NavEnabled: false
+        NavEnabled: false,
+        ErrMsgEnabled: false,
+        errMsg: ""
     });
 });
 router.post('/', (req, res) => {
     try {
         const { email, password } = req.body;
+
+        // Finds the validation errors
+        /*if (validator.isEmpty(email)) {
+            res.render('pages/login', {
+                NavEnabled: false,
+                ErrMsgEnabled: true,
+                errMsg: "Please enter the email"
+            });
+        } else if (validator.isEmpty(password)) {
+            res.render('pages/login', {
+                NavEnabled: false,
+                ErrMsgEnabled: true,
+                errMsg: "Please enter the password"
+            });
+        } else if (validator.isEmail(email)) {
+            res.render('pages/login', {
+                NavEnabled: false,
+                ErrMsgEnabled: true,
+                errMsg: "Please enter email in correct format"
+            });
+        }*/
     
         let crypto = require('crypto');
         let pwdEncrypt = crypto.createHash('sha256').update(password).digest('base64');
@@ -29,7 +53,9 @@ router.post('/', (req, res) => {
                 } else {
                     // Username or password doesn't match: Login fail
                     res.render('pages/login', {
-                        NavEnabled: false
+                        NavEnabled: false,
+                        ErrMsgEnabled: true,
+                        errMsg: "Username or password doesn't match"
                     });
                 }
             }
