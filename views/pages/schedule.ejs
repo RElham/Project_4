@@ -3,6 +3,10 @@
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
     
+    <%if(ErrMsgEnabled){%>
+        <p style="color: red;"><%= errMsg %></p><br>
+    <%}%>
+
     <section class="form-submit" id="scheduleSubmit">
         <form method="post" action="/schedule">
             <div id="form-input">
