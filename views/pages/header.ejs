@@ -12,6 +12,7 @@
     <link href="/static/style/content.css" rel="stylesheet" />
     <link href="/static/style/responsive.css" rel="stylesheet" />
     <link href="/static/style/form.css" rel="stylesheet" />
+    <link href="/static/style/schedule.css" rel="stylesheet" />
     <!-- References to external font-style -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
@@ -23,12 +24,14 @@
 <header>
   <img id="header-logo" src="/static/img/full_logo_white.png" alt="Mr. Coffee logo with the text MR. COFFEE in white color">
   <div id="header-nav">
+    <%if(NavEnabled){%>
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/schedule">Schedule management</a></li>
-            <li><a href="/login">Sign Out</a></li>
+            <li><a href="/logout">Sign Out</a></li>
         </ul>
     </nav>
+    <%}%>
   </div>
 </header>
