@@ -3,24 +3,29 @@
 <section id="content">
     <img id="content-logo" src="/static/img/logo_mrcoffee.png" alt="Mr. Coffee's logo with the text MR. COFFEE in black color">
     <div id="schedules">
-          <p>Firstname :
-            <strong><%= users[0].firstname %></strong>
-          </p>
-          <p>Lastname :
-            <strong><%= users[0].lastname %></strong>
-          </p>
-          <p>Email :
-            <strong><%= users[0].email %></strong>
-          </p>
+        <p>Firstname :
+          <strong><%= users[0].firstname %></strong>
+        </p>
+        <p>Lastname :
+          <strong><%= users[0].lastname %></strong>
+        </p>
+        <p>Email :
+          <strong><%= users[0].email %></strong>
+        </p>
+        <br>
+        <form method="POST" action="/employee">
         <% for(let i = 0; i < users.length; i++) { %>
-          <div id="schedules">
+          <div>
               <p>
-                <%= users[i].day %>&nbsp;<%= users[i].start_at %>-<%= users[i].end_at %>
+                <%= users[i].day %>&nbsp;<%= users[i].start_at %>-<%= users[i].end_at %>&nbsp;&nbsp;
+                <%if(users[0].user_id === user_id){%>
+                <strong><a href="/employee/schedule/<%= users[i].schedule_id %>">DELETE</a></strong>
+                <%}%>
               </p>
           </table>
         </div>
         <% } %>
-      </table>
+        </form>
     </div>
 </section>
 
