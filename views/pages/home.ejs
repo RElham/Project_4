@@ -6,10 +6,9 @@
     <div id="schedules">
         <% for(let i = 0; i < schedules.length; i++) { %>
           <p>
-            <strong><a href="/employee/<%= schedules[i].user_id %>"><%= schedules[i].firstname %></a></strong>&nbsp;-&nbsp;<%= schedules[i].day %>&nbsp;<%= schedules[i].start_at %>-<%= schedules[i].end_at %>
+            <strong><a href="/employee/<%= schedules[i].user_id %>"><%= schedules[i].firstname %>&nbsp;&nbsp;<%= schedules[i].lastname %></a></strong>&nbsp;-&nbsp;<%= schedules[i].day %>&nbsp;<%= schedules[i].start_at %>-<%= schedules[i].end_at %>
           </p>
         <% } %>
-      </table>
     </div>
 </section>
 

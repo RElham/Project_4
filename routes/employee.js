@@ -23,7 +23,36 @@ router.get('/:id', sessionChecker, (req, res) => {
             //console.log(results.rows)
             res.render('pages/employee', {
                 NavEnabled: true,
-                users: results.rows
+                users: results.rows,
+                user_id: req.session.user_id
+            })
+        }
+    })
+})
+// Delete the schedule
+router.get('/schedule/:scheduleId', sessionChecker, (req, res) => {
+    let scheduleId = req.params.scheduleId
+    let scheduleSql = "DELETE FROM schedules WHERE schedule_id = " + scheduleId
+    pool.query(scheduleSql, (error, results) => {
+        if (error) {
+            throw error
+        } else {
+            let userSql = "SELECT *, CASE WHEN a.day = 1 THEN 'Monday' WHEN a.day = 2 THEN 'Tuesday' WHEN a.day = 3 THEN 'Wednesday' WHEN a.day = 4 THEN 'Thursday' WHEN a.day = 5 THEN 'Friday' WHEN a.day = 6 THEN 'Saturday' ELSE 'Sunday' END AS day, TO_CHAR(start_at, 'HH:MM') as start_at, TO_CHAR(end_at, 'HH:MM') as end_at FROM SCHEDULES a JOIN USERS b ON a.user_id = b.user_id WHERE b.user_id = " + req.session.user_id 
+    
+            pool.query(userSql, (error, results) => {
+                if (error) {
+                    throw error
+                } else {
+                    //console.log(results.rows)
+                    if (results.rows.length === 0) {
+                        console.log("NO schedule")
+                    } else {
+                        res.render('pages/home', {
+                            NavEnabled: true,
+                            schedules: results.rows
+                        })
+                    }
+                }
             })
         }
     })
